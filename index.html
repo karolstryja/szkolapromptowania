@@ -349,6 +349,14 @@
       text-decoration: none;
       color: inherit;
     }
+    /* Override Webflow IX2 inline color — ensure readability in both modes */
+    .service-title {
+      color: var(--text-primary) !important;
+      transition: color 0.4s ease !important;
+    }
+    .service-item-wrap:hover .service-title {
+      color: var(--primary-tint) !important;
+    }
     .service-accordion-item .service-icon-box {
       transition: transform 0.3s cubic-bezier(.23,1,.32,1);
     }
@@ -392,6 +400,10 @@
       border-radius: 100px;
       padding: 6px 16px;
       opacity: 0.7;
+    }
+    [data-theme="dark"] .service-expand-inner ul li {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.1);
     }
 
     /* Contact form rounded inputs */
@@ -587,9 +599,10 @@
       color: var(--gray-color);
     }
 
-    /* FAQ section — slightly lighter dark to differentiate */
+    /* FAQ section — scoped override, keeps white text on dark bg */
     [data-theme="dark"] .faq-section {
-      background-color: #332a1f !important;
+      background-color: #241e17 !important;
+      --white: white;
     }
 
     /* CTA button — stays amber with dark text in both modes */
