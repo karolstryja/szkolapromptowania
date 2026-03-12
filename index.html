@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Szkoła Promptowania - Promptowanie to nowy angielski</title>
+  <meta content="Szkoła Promptowania - naucz się rozmawiać z AI i zyskaj przewagę w każdej branży. Kursy promptowania dla początkujących i zaawansowanych." name="description">
+  <meta content="Szkoła Promptowania - Promptowanie to nowy angielski" property="og:title">
+  <meta content="Naucz się rozmawiać z AI i zyskaj przewagę w każdej branży. Kursy promptowania od podstaw po zaawansowane techniki." property="og:description">
+  <meta content="Szkoła Promptowania - Promptowanie to nowy angielski" property="twitter:title">
+  <meta content="Naucz się rozmawiać z AI i zyskaj przewagę w każdej branży. Kursy promptowania od podstaw po zaawansowane techniki." property="twitter:description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/karols-stunning-site-350399.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.svg" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.svg" rel="apple-touch-icon">
+  <style>
+    /* Navbar logo override */
+    .navbar-brand .image {
+      max-width: none;
+      max-height: none;
+      height: 44px;
+      width: auto;
+    }
+    .navbar-brand.w--current {
+      align-self: center !important;
+    }
+    /* CTA button — filled amber, cohesive with logo */
+    .primary-btn-wrap {
+      background-color: var(--primary) !important;
+      border-color: var(--primary) !important;
+    }
+    .primary-btn-wrap .button-text {
+      color: #09080e !important;
+      text-transform: none !important;
+    }
+    .primary-btn-wrap .arrow-01 {
+      filter: brightness(0) !important;
+    }
+    /* Hero h1 — tighter tracking */
+    .banner-content h1 {
+      letter-spacing: -7px;
+    }
+    .primary-btn-wrap:hover {
+      background-color: var(--primary-tint) !important;
+      border-color: var(--primary-tint) !important;
+    }
+    /* Footer decorative watermark — mimics original Slayed positioning */
+    .footer-inner-wrap {
+      overflow: hidden !important;
+    }
+    .footer-watermark {
+      position: absolute;
+      bottom: -30px;
+      right: -10px;
+      font-family: 'CreatoDisplay', sans-serif;
+      font-weight: 700;
+      font-size: 180px;
+      color: #2a2118;
+      opacity: 0.15;
+      line-height: 0.85;
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: -5px;
+    }
+    @media (max-width: 991px) {
+      .footer-watermark {
+        font-size: 120px;
+        bottom: -20px;
+        letter-spacing: -3px;
+      }
+    }
+    @media (max-width: 768px) {
+      .footer-watermark {
+        font-size: 80px;
+        bottom: -14px;
+        right: -5px;
+        letter-spacing: -2px;
+      }
+    }
+
+    /* Logo marquee — infinite scroll */
+    .logo-marquee {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+    .logo-marquee-track {
+      display: flex;
+      gap: 64px;
+      width: max-content;
+      animation: marquee 20s linear infinite;
+    }
+    .logo-marquee-track .logo {
+      flex: none;
+      max-width: 140px;
+      max-height: 32px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    .logo-marquee-track .logo:hover {
+      opacity: 1;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Hero slide-up animation (Webflow IX2 style) */
+    .animation-wrap {
+      overflow: hidden;
+    }
+    .animation-wrap h1 {
+      transform: translate3d(0, 130%, 0) rotateZ(5deg);
+      animation: slideUp 1s cubic-bezier(.23,1,.32,1) forwards;
+    }
+    .animation-wrap.v1 h1 {
+      animation-delay: 0.15s;
+    }
+    @keyframes slideUp {
+      to {
+        transform: translate3d(0, 0, 0) rotateZ(0deg);
+      }
+    }
+
+    /* Banner image parallax-zoom entrance */
+    .banner-image-wrap img {
+      transform: scale(1.15);
+      animation: zoomIn 1.4s cubic-bezier(.23,1,.32,1) 0.3s forwards;
+    }
+    @keyframes zoomIn {
+      to {
+        transform: scale(1);
+      }
+    }
+
+    /* Scroll-triggered fade-in (Webflow style) */
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(.23,1,.32,1), transform 0.8s cubic-bezier(.23,1,.32,1);
+    }
+    .scroll-fade.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered children */
+    .scroll-fade-stagger > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s cubic-bezier(.23,1,.32,1), transform 0.6s cubic-bezier(.23,1,.32,1);
+    }
+    .scroll-fade-stagger.is-visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-fade-stagger.is-visible > *:nth-child(2) { transition-delay: 0.1s; }
+    .scroll-fade-stagger.is-visible > *:nth-child(3) { transition-delay: 0.2s; }
+    .scroll-fade-stagger.is-visible > *:nth-child(4) { transition-delay: 0.3s; }
+    .scroll-fade-stagger.is-visible > *:nth-child(5) { transition-delay: 0.4s; }
+
+    /* FAQ Section */
+    .faq-section {
+      background-color: #2a2118;
+      border-radius: 24px;
+      padding: 80px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+    }
+    .faq-left {
+      position: sticky;
+      top: 120px;
+      align-self: start;
+    }
+    .faq-left h2 {
+      font-family: var(--font-family);
+      font-size: var(--_typography---heading--heading-h2);
+      font-weight: var(--bold);
+      color: var(--white);
+      letter-spacing: var(--_typography---letter-spacing--letter-spacing-h2);
+      line-height: var(--_typography---line-height--line-height-xs);
+      margin: 0 0 24px 0;
+    }
+    .faq-left p {
+      font-family: var(--font-family);
+      font-size: var(--_typography---heading--paragraph);
+      color: rgba(255, 255, 255, 0.6);
+      line-height: var(--_typography---line-height--line-height-l);
+      margin: 0;
+    }
+    .faq-right {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      cursor: pointer;
+      gap: 20px;
+      transition: opacity 0.2s ease;
+    }
+    .faq-question:hover {
+      opacity: 0.7;
+    }
+    .faq-question h4 {
+      margin: 0;
+      font-family: var(--font-family);
+      font-size: var(--_typography---heading--heading-h4);
+      font-weight: var(--medium);
+      color: var(--white);
+      letter-spacing: var(--_typography---letter-spacing--letter-spacing-h4);
+      line-height: var(--_typography---line-height--line-height-m);
+    }
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background-color: var(--white);
+      transition: transform 0.3s cubic-bezier(.23,1,.32,1);
+    }
+    .faq-icon::before {
+      width: 20px;
+      height: 1.5px;
+    }
+    .faq-icon::after {
+      width: 1.5px;
+      height: 20px;
+    }
+    .faq-item.is-open .faq-icon::before {
+      transform: rotate(45deg);
+    }
+    .faq-item.is-open .faq-icon::after {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(.23,1,.32,1);
+    }
+    .faq-item.is-open .faq-answer {
+      max-height: 500px;
+    }
+    .faq-answer-inner {
+      padding: 0 0 24px 0;
+    }
+    .faq-answer-inner p {
+      font-family: var(--font-family);
+      font-size: var(--_typography---heading--paragraph);
+      color: rgba(255, 255, 255, 0.6);
+      line-height: var(--_typography---line-height--line-height-l);
+      margin: 0;
+    }
+    .faq-answer-inner ul {
+      list-style: none;
+      padding: 12px 0 0 0;
+      margin: 0;
+    }
+    .faq-answer-inner ul li {
+      font-family: var(--font-family);
+      font-size: var(--_typography---heading--paragraph);
+      color: rgba(255, 255, 255, 0.6);
+      line-height: var(--_typography---line-height--line-height-l);
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .faq-answer-inner ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+    @media (max-width: 768px) {
+      .faq-section {
+        grid-template-columns: 1fr;
+        padding: 48px 28px;
+        gap: 40px;
+      }
+      .faq-left {
+        position: static;
+      }
+      .faq-left h2 {
+        font-size: 36px;
+      }
+    }
+
+    /* Service Accordion */
+    .service-accordion-item {
+      cursor: pointer;
+    }
+    .service-accordion-item .service-item-wrap {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+    .service-accordion-item .service-icon-box {
+      transition: transform 0.3s cubic-bezier(.23,1,.32,1);
+    }
+    .service-accordion-item.is-open .service-icon-box {
+      transform: rotate(45deg);
+    }
+    .service-expand-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(.23,1,.32,1);
+    }
+    .service-accordion-item.is-open .service-expand-content {
+      max-height: 400px;
+    }
+    .service-expand-inner {
+      padding: 0 0 28px 0;
+    }
+    .service-expand-inner p {
+      font-family: var(--font-family);
+      font-size: var(--_typography---heading--paragraph);
+      color: var(--text-primary);
+      line-height: var(--_typography---line-height--line-height-l);
+      margin: 0;
+      opacity: 0.65;
+    }
+    .service-expand-inner ul {
+      list-style: none;
+      padding: 14px 0 0 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .service-expand-inner ul li {
+      font-family: var(--font-family);
+      font-size: 13px;
+      font-weight: var(--medium);
+      color: var(--text-primary);
+      background: rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 100px;
+      padding: 6px 16px;
+      opacity: 0.7;
+    }
+
+    /* Contact form rounded inputs */
+    .contact-input {
+      border-radius: 12px !important;
+    }
+    .contact-input.textarea {
+      border-radius: 16px !important;
+    }
+
+    /* Blog Carousel */
+    .blog-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+    .blog-header .blog-list {
+      margin: 0;
+      flex: 1;
+    }
+    .blog-carousel {
+      overflow: hidden;
+      position: relative;
+    }
+    .blog-carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.5s cubic-bezier(.23,1,.32,1);
+    }
+    .blog-carousel-track .blog-slide {
+      width: calc(33.333% - 16px);
+      min-width: calc(33.333% - 16px);
+      max-width: calc(33.333% - 16px);
+      flex-shrink: 0;
+    }
+    .blog-carousel-track .blog-slide .blog-link-block {
+      display: block;
+    }
+    .blog-carousel-track .blog-slide .project-image-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+    }
+    .blog-carousel-track .blog-slide .blog-main-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .blog-carousel-track .blog-slide .project-title.v1 {
+      font-size: 20px;
+    }
+    /* Side navigation arrows */
+    .blog-side-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 48px;
+      font-weight: 300;
+      font-family: var(--font-family);
+      color: var(--primary);
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s cubic-bezier(.23,1,.32,1);
+      user-select: none;
+      line-height: 1;
+      padding: 20px 6px;
+      opacity: 0.85;
+    }
+    .blog-side-nav:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.15);
+    }
+    .blog-side-nav.disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .blog-side-nav.prev {
+      left: -52px;
+    }
+    .blog-side-nav.next {
+      right: -52px;
+    }
+    @media (max-width: 991px) {
+      .blog-carousel-track .blog-slide {
+        width: calc(50% - 12px);
+        min-width: calc(50% - 12px);
+        max-width: calc(50% - 12px);
+      }
+      .blog-side-nav {
+        font-size: 36px;
+        padding: 16px 4px;
+      }
+      .blog-side-nav.prev {
+        left: -36px;
+      }
+      .blog-side-nav.next {
+        right: -36px;
+      }
+    }
+    @media (max-width: 768px) {
+      .blog-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .blog-carousel-track .blog-slide {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+      }
+      .blog-side-nav {
+        font-size: 30px;
+        padding: 12px 2px;
+      }
+      .blog-side-nav.prev {
+        left: -24px;
+      }
+      .blog-side-nav.next {
+        right: -24px;
+      }
+    }
+
+    /* Banner subtitle fade-in */
+    .list.banner {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s cubic-bezier(.23,1,.32,1) 0.5s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="Home" class="page-wrapper">
+    <div data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e44387" class="navbar">
+      <div data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e44388" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-no-shadow-container w-nav">
+        <div class="container">
+          <div class="navbar-wrapper">
+            <div class="navber-wrap">
+              <a href="#Home" aria-current="page" class="navbar-brand w-nav-brand w--current"><img src="images/logo.svg" loading="lazy" alt="Szkoła Promptowania" class="image"></a>
+            </div>
+            <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
+              <div class="navber-wrapper">
+                <ul role="list" class="nav-menu w-list-unstyled">
+                  <li>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e44392" href="#Home" class="nav-link">Start</a>
+                    <div class="line"></div>
+                  </li>
+                  <li>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e44396" href="#about" class="nav-link">O nas</a>
+                    <div class="line"></div>
+                  </li>
+                  <li>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e4439a" href="#Service" class="nav-link">Kursy</a>
+                    <div class="line"></div>
+                  </li>
+                  <li>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e4439f" href="#Project" class="nav-link">Efekty</a>
+                    <div class="line"></div>
+                  </li>
+                  <li>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e443a7" href="#Pricing" class="nav-link">Cennik</a>
+                    <div class="line"></div>
+                  </li>
+                  <li>
+                    <a data-w-id="67e2b60c-adbb-1b0a-5d0e-9a3b41ddc1e8" href="#Blog" class="nav-link">Blog</a>
+                    <div class="line"></div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div class="navber-menu-wrap">
+              <a href="#Contact" class="primary-btn-wrap navber w-inline-block">
+                <div class="text-wrap">
+                  <div class="button-text">zacznij naukę</div>
+                  <div class="button-text">zacznij naukę</div>
+                </div>
+                <div class="icon-wrapper"><img loading="lazy" src="images/arrow-right.svg" alt="" class="arrow-01"><img loading="lazy" src="images/arrow-right.svg" alt="" class="arrow-01"></div>
+              </a>
+              <div class="menu-button w-nav-button">
+                <div data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e443b5" data-is-ix2-target="1" data-animation-type="lottie" data-src="documents/menu-bars-animation-1-1-1.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="0.9666666666666667" data-ix2-initial-state="0"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="section bnner">
+      <div class="w-layout-blockcontainer container w-container">
+        <div data-w-id="b823750b-2d35-42e2-d18e-a5455d232a81">
+          <div class="animation-wrap">
+            <h1>Promptowanie<br></h1>
+          </div>
+          <div class="animation-wrap v1">
+            <h1>to nowy angielski.</h1>
+          </div>
+        </div>
+        <ul role="list" class="list banner">
+          <li>
+            <div class="banner-list-flex">
+              <p class="section-title-style">Szkoła Promptowania</p>
+              <p class="banner-list-text">Naucz się rozmawiać z AI i zyskaj przewagę w każdej branży. Nie musisz być programistą — wystarczy, że nauczysz się zadawać właściwe pytania.</p>
+            </div>
+          </li>
+        </ul>
+        <div data-w-id="f97c393a-ba06-4eed-1d82-401137d06106" class="banner-image-wrap"><img src="images/DSC04822-kopia.jpg" loading="eager" alt="Szkoła Promptowania - Marcin Sawicki i Karol Stryja"></div>
+      </div>
+    </section>
+    <section id="about" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <ul role="list" class="list">
+          <li>
+            <div class="banner-list-flex">
+              <div class="about-number-wrapper">
+                <p class="section-title-style scroll-fade">Dlaczego promptowanie?</p>
+                <div class="number-counter-wrapper scroll-fade-stagger">
+                  <div class="number-wrap">
+                    <h2>90<span class="primary-color">%</span></h2>
+                    <p>firm wdroży AI do 2027</p>
+                  </div>
+                  <div class="number-wrap">
+                    <h2>3<span class="primary-color">x</span></h2>
+                    <p>szybsza praca z dobrym promptem</p>
+                  </div>
+                  <div class="number-wrap">
+                    <h2>0<span class="primary-color">%</span></h2>
+                    <p>wymaganej wiedzy technicznej</p>
+                  </div>
+                </div>
+              </div>
+              <p class="banner-list-text scroll-fade">Sztuczna inteligencja zmienia zasady gry w każdej branży. Ci, którzy nauczą się z nią skutecznie współpracować, zyskają ogromną przewagę — w pracy, biznesie i codziennym życiu. Promptowanie to umiejętność komunikacji z AI. Tak jak angielski otwierał drzwi do globalnego świata, tak promptowanie otwiera drzwi do świata sztucznej inteligencji.<br><br>Nie musisz być programistą. Nie musisz znać się na technologii. Wystarczy, że nauczysz się formułować precyzyjne polecenia — a AI zrobi resztę. Nasze kursy prowadzą Cię krok po kroku, od podstaw po zaawansowane techniki, które zmienią sposób w jaki pracujesz.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="Service" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <ul role="list" class="list">
+          <li>
+            <div class="banner-list-flex v1">
+              <div class="service-left-block">
+                <p class="section-title-style scroll-fade">Czego się nauczysz</p>
+                <a href="#Pricing" data-w-id="511328fb-ea67-5517-1696-c8fe20b9361a" class="primary-btn-wrap navber w-inline-block">
+                  <div class="text-wrap">
+                    <div class="button-text">Zobacz kursy</div>
+                    <div class="button-text">Zobacz kursy</div>
+                  </div>
+                  <div class="icon-wrapper"><img loading="lazy" src="images/arrow-right.svg" alt="" class="arrow-01"><img loading="lazy" src="images/arrow-right.svg" alt="" class="arrow-01"></div>
+                </a>
+              </div>
+              <div class="scroll-fade-stagger">
+                <div class="service-accordion-item">
+                  <div class="service-item-wrap w-inline-block">
+                    <h3 class="service-title">Podstawy promptowania</h3>
+                    <div class="service-line"><div class="inner-service-line"></div></div>
+                    <div class="service-icon-box"><img src="images/arrow-right-primary.svg" loading="lazy" alt="" class="sevice-icon"><img src="images/arrow-right_1.svg" loading="lazy" alt="" class="sevice-icon"></div>
+                  </div>
+                  <div class="service-expand-content">
+                    <div class="service-expand-inner">
+                      <p>Zaczynamy od zera. Nauczysz się jak działają modele językowe, jak formułować skuteczne polecenia i jak unikać najczęstszych błędów w komunikacji z AI. Po tym module będziesz swobodnie korzystać z ChatGPT, Claude i innych narzędzi.</p>
+                      <ul>
+                        <li>Anatomia promptu</li>
+                        <li>Kontekst i role</li>
+                        <li>Iteracja odpowiedzi</li>
+                        <li>ChatGPT & Claude</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-accordion-item">
+                  <div class="service-item-wrap w-inline-block">
+                    <h4 class="service-title">Prompt engineering</h4>
+                    <div class="service-line"><div class="inner-service-line"></div></div>
+                    <div class="service-icon-box"><img src="images/arrow-right-primary.svg" loading="lazy" alt="" class="sevice-icon"><img src="images/arrow-right_1.svg" loading="lazy" alt="" class="sevice-icon"></div>
+                  </div>
+                  <div class="service-expand-content">
+                    <div class="service-expand-inner">
+                      <p>Zaawansowane techniki, które wyciągają z AI maksimum. Chain-of-thought, few-shot learning, system prompts, structured outputs — poznasz metody stosowane przez najlepszych inżynierów promptów na świecie.</p>
+                      <ul>
+                        <li>Chain-of-thought</li>
+                        <li>Few-shot learning</li>
+                        <li>System prompts</li>
+                        <li>Structured outputs</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-accordion-item">
+                  <div class="service-item-wrap w-inline-block">
+                    <h4 class="service-title">AI w biznesie</h4>
+                    <div class="service-line"><div class="inner-service-line"></div></div>
+                    <div class="service-icon-box"><img src="images/arrow-right-primary.svg" loading="lazy" alt="" class="sevice-icon"><img src="images/arrow-right_1.svg" loading="lazy" alt="" class="sevice-icon"></div>
+                  </div>
+                  <div class="service-expand-content">
+                    <div class="service-expand-inner">
+                      <p>Praktyczne zastosowania AI w firmie — od strategii przez operacje po obsługę klienta. Nauczysz się wdrażać AI w codzienne procesy biznesowe i mierzyć realne efekty. Idealne dla managerów, właścicieli firm i liderów zespołów.</p>
+                      <ul>
+                        <li>Strategia AI</li>
+                        <li>Analiza danych</li>
+                        <li>Obsługa klienta</li>
+                        <li>ROI z AI</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-accordion-item">
+                  <div class="service-item-wrap w-inline-block">
+                    <h4 class="service-title">AI dla kreatywnych</h4>
+                    <div class="service-line"><div class="inner-service-line"></div></div>
+                    <div class="service-icon-box"><img src="images/arrow-right-primary.svg" loading="lazy" alt="" class="sevice-icon"><img src="images/arrow-right_1.svg" loading="lazy" alt="" class="sevice-icon"></div>
+                  </div>
+                  <div class="service-expand-content">
+                    <div class="service-expand-inner">
+                      <p>AI jako partner kreatywny. Generowanie treści, grafik, wideo i muzyki z pomocą sztucznej inteligencji. Dowiesz się jak używać Midjourney, DALL·E, Suno i dziesiątek innych narzędzi do tworzenia profesjonalnych materiałów.</p>
+                      <ul>
+                        <li>Copywriting z AI</li>
+                        <li>Generowanie grafik</li>
+                        <li>Wideo i animacje</li>
+                        <li>Kreatywny workflow</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-accordion-item">
+                  <div class="service-item-wrap w-inline-block">
+                    <h4 class="service-title">Automatyzacja z AI</h4>
+                    <div class="service-line"><div class="inner-service-line"></div></div>
+                    <div class="service-icon-box"><img src="images/arrow-right-primary.svg" loading="lazy" alt="" class="sevice-icon"><img src="images/arrow-right_1.svg" loading="lazy" alt="" class="sevice-icon"></div>
+                  </div>
+                  <div class="service-expand-content">
+                    <div class="service-expand-inner">
+                      <p>Łącz narzędzia AI w automatyczne pipeline'y, które pracują za Ciebie. Make, Zapier, n8n — nauczysz się budować scenariusze automatyzacji bez pisania kodu. Od prostych integracji po zaawansowane wieloetapowe procesy.</p>
+                      <ul>
+                        <li>Make & Zapier</li>
+                        <li>Automatyczne pipeline'y</li>
+                        <li>Integracje API</li>
+                        <li>No-code workflows</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="Project" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <ul role="list" class="list">
+          <li>
+            <div class="banner-list-flex">
+              <div class="about-number-wrapper">
+                <p class="section-title-style scroll-fade">Efekty naszych kursantów</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="project-wrapper scroll-fade-stagger">
+          <a data-w-id="019b7adc-b075-2cec-a634-132fc950c4a4" href="#Contact" class="project-wrap w-inline-block">
+            <div class="project-image-wrap"><img src="images/project-1.jpg" loading="lazy" alt="Kursant przy pracy z AI">
+              <div class="cursor-box"><img src="images/cursor-arrow.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="cursor-image"></div>
+            </div>
+            <div>
+              <p class="project-number">01</p>
+              <h5 class="project-title">Marketing z AI</h5>
+              <p class="project-tag">Strategia, Content, Social Media</p>
+            </div>
+          </a>
+          <a data-w-id="57b02fb2-3373-574d-08c3-af69176b9a8e" href="#Contact" class="project-wrap w-inline-block">
+            <div class="project-image-wrap"><img src="images/project-2_1project-2.webp" loading="lazy" alt="Automatyzacja procesów z AI">
+              <div class="cursor-box"><img src="images/cursor-arrow.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="cursor-image"></div>
+            </div>
+            <div>
+              <p class="project-number">02</p>
+              <h5 class="project-title">Automatyzacja firmy</h5>
+              <p class="project-tag">Procesy, Workflow, Oszczędność czasu</p>
+            </div>
+          </a>
+          <a data-w-id="314651f6-4bd6-8efe-2bcf-73a6a94eafeb" href="#Contact" class="project-wrap w-inline-block">
+            <div class="project-image-wrap"><img src="images/project-3_1project-3.webp" loading="lazy" alt="Tworzenie treści z AI">
+              <div class="cursor-box"><img src="images/cursor-arrow.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="cursor-image"></div>
+            </div>
+            <div>
+              <p class="project-number">03</p>
+              <h5 class="project-title">Content na sterydach</h5>
+              <p class="project-tag">Copywriting, Blog, Newsletter</p>
+            </div>
+          </a>
+          <a data-w-id="549ea148-6015-1681-856c-fe3435756a7f" href="#Contact" class="project-wrap w-inline-block">
+            <div class="project-image-wrap"><img src="images/project-4_1project-4.webp" loading="lazy" alt="Analiza danych z AI">
+              <div class="cursor-box"><img src="images/cursor-arrow.svg" loading="lazy" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" alt="" class="cursor-image"></div>
+            </div>
+            <div>
+              <p class="project-number">04</p>
+              <h5 class="project-title">Dane i analityka</h5>
+              <p class="project-tag">Raporty, Analiza, Wizualizacja</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="Pricing" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <ul role="list" class="list">
+          <li>
+            <div class="banner-list-flex">
+              <div class="about-number-wrapper">
+                <p class="section-title-style scroll-fade">Cennik</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="pricing-wrapper scroll-fade-stagger">
+          <div id="w-node-e92b7a97-d7d0-d2c1-5ea1-c85f3033faaf-eb65a73a" class="pricing-wrap">
+            <h4 class="pricing-name">Start</h4>
+            <div class="pricing-inner-wrap">
+              <div>
+                <h3>0 zł</h3>
+                <div class="line v1"></div>
+                <p>W pakiecie</p>
+                <ul role="list" class="pricing-list">
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Wprowadzenie do promptowania</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">5 lekcji video</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Zestaw gotowych promptów</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Dostęp do społeczności</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Certyfikat ukończenia</p>
+                  </li>
+                </ul>
+                <a href="#Contact" class="pricing-btn w-button">Zacznij za darmo</a>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-wrap">
+            <h4 class="pricing-name">Pro</h4>
+            <div class="pricing-inner-wrap">
+              <div>
+                <h3>297 zł</h3>
+                <div class="line v1"></div>
+                <p>W pakiecie</p>
+                <ul role="list" class="pricing-list">
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Pełny kurs promptowania (30+ lekcji)</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Biblioteka 100+ promptów</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Ćwiczenia praktyczne</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Wsparcie mentora</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Aktualizacje dożywotnie</p>
+                  </li>
+                </ul>
+              </div>
+              <a href="#Contact" class="pricing-btn w-button">Wybieram Pro</a>
+            </div>
+          </div>
+          <div class="pricing-wrap">
+            <h4 class="pricing-name">Firma</h4>
+            <div class="pricing-inner-wrap">
+              <div>
+                <h3>Zadzwoń</h3>
+                <div class="line v1"></div>
+                <p>W pakiecie</p>
+                <ul role="list" class="pricing-list">
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Szkolenie dla całego zespołu</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Program dopasowany do branży</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Warsztaty na żywo</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Dedykowany opiekun</p>
+                  </li>
+                  <li class="list-item"><img src="images/list-icon.svg" loading="lazy" alt="" class="list-icon">
+                    <p class="paragraph">Raport wdrożenia AI w firmie</p>
+                  </li>
+                </ul>
+              </div>
+              <a href="#Contact" class="pricing-btn w-button">Porozmawiajmy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Blog" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="blog-header">
+          <ul role="list" class="blog-list">
+            <li>
+              <div class="banner-list-flex">
+                <div class="about-number-wrapper">
+                  <p class="section-title-style-2">Blog</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="blog-carousel scroll-fade">
+          <button class="blog-side-nav prev disabled" aria-label="Poprzedni">&#8249;</button>
+          <div class="blog-carousel-track">
+            <div class="blog-slide">
+              <a href="#" class="blog-link-block w-inline-block">
+                <div class="project-wrap-v2">
+                  <div class="project-image-wrap"><img loading="lazy" alt="Jak napisać pierwszy prompt" src="images/image-1_2image-1.webp" class="blog-main-image">
+                    <div class="cursor-box"><img loading="lazy" alt="" src="images/cursor-arrow.svg" class="cursor-image" style="transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"></div>
+                  </div>
+                  <div>
+                    <div class="blog-info-wrap">
+                      <p class="read-time">7 min</p>
+                      <p class="dot"></p>
+                      <p class="date-text">10 marca 2026</p>
+                    </div>
+                    <h4 style="color:rgb(9,8,14)" class="project-title v1">Jak napisać pierwszy prompt — kompletny poradnik dla początkujących</h4>
+                    <p class="blog-short-text v1">Wszystko, co musisz wiedzieć, żeby zacząć efektywnie korzystać z ChatGPT i Claude. Od struktury promptu po najczęstsze błędy.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="blog-slide">
+              <a href="#" class="blog-link-block w-inline-block">
+                <div class="project-wrap-v2">
+                  <div class="project-image-wrap"><img loading="lazy" alt="Błędy w promptowaniu" src="images/image-2.webp" class="blog-main-image">
+                    <div class="cursor-box"><img loading="lazy" alt="" src="images/cursor-arrow.svg" class="cursor-image" style="transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"></div>
+                  </div>
+                  <div>
+                    <div class="blog-info-wrap">
+                      <p class="read-time">5 min</p>
+                      <p class="dot"></p>
+                      <p class="date-text">5 marca 2026</p>
+                    </div>
+                    <h4 style="color:rgb(9,8,14)" class="project-title v1">5 błędów w promptowaniu, które kosztują Cię godziny pracy</h4>
+                    <p class="blog-short-text v1">Większość ludzi popełnia te same błędy w rozmowie z AI. Sprawdź, czy Ty też — i jak je naprawić w 5 minut.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="blog-slide">
+              <a href="#" class="blog-link-block w-inline-block">
+                <div class="project-wrap-v2">
+                  <div class="project-image-wrap"><img loading="lazy" alt="AI w pracy zdalnej" src="images/image-1_1.webp" class="blog-main-image">
+                    <div class="cursor-box"><img loading="lazy" alt="" src="images/cursor-arrow.svg" class="cursor-image" style="transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"></div>
+                  </div>
+                  <div>
+                    <div class="blog-info-wrap">
+                      <p class="read-time">6 min</p>
+                      <p class="dot"></p>
+                      <p class="date-text">28 lutego 2026</p>
+                    </div>
+                    <h4 style="color:rgb(9,8,14)" class="project-title v1">AI w codziennej pracy — jak zwiększyć produktywność bez wysiłku</h4>
+                    <p class="blog-short-text v1">Praktyczne sposoby na wykorzystanie AI do maili, raportów, prezentacji i analizy danych. Sprawdzone przez naszych kursantów.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <button class="blog-side-nav next disabled" aria-label="Następny">&#8250;</button>
+        </div>
+      </div>
+    </section>
+    <section id="Contact-V2" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <ul role="list" class="list">
+          <li>
+            <div class="banner-list-flex">
+              <div class="about-number-wrapper">
+                <p class="section-title-style scroll-fade">Zaufali nam</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="logo-marquee scroll-fade">
+          <div class="logo-marquee-track">
+            <img src="images/logo-10.svg" loading="lazy" alt="" class="logo">
+            <img src="images/logo-11.svg" loading="lazy" alt="" class="logo">
+            <img src="images/Frame.svg" loading="lazy" alt="" class="logo">
+            <img src="images/logo-4.svg" loading="lazy" alt="" class="logo">
+            <img src="images/Frame-1.svg" loading="lazy" alt="" class="logo">
+            <img src="images/logo-1.svg" loading="lazy" alt="" class="logo">
+            <!-- Duplicate for seamless loop -->
+            <img src="images/logo-10.svg" loading="lazy" alt="" class="logo">
+            <img src="images/logo-11.svg" loading="lazy" alt="" class="logo">
+            <img src="images/Frame.svg" loading="lazy" alt="" class="logo">
+            <img src="images/logo-4.svg" loading="lazy" alt="" class="logo">
+            <img src="images/Frame-1.svg" loading="lazy" alt="" class="logo">
+            <img src="images/logo-1.svg" loading="lazy" alt="" class="logo">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Contact-form" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <ul role="list" class="list">
+          <li>
+            <div class="banner-list-flex">
+              <div class="about-number-wrapper">
+                <p class="section-title-style scroll-fade">Co mówią kursanci</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="tesitmonial-content-wrapper scroll-fade-stagger">
+          <div class="testimonial-slider-content-wrapper">
+            <p class="testimonial-slider-text">&quot;Po kursie zacząłem używać AI codziennie w pracy. Oszczędzam minimum 2 godziny dziennie na pisaniu maili, raportów i analiz. Żałuję, że nie zacząłem wcześniej.&quot;</p>
+            <div class="testimonial-client-info-wrapper"><img loading="lazy" src="images/Testimonial-Client-Image-3.svg" alt="" class="testimonial-client-image">
+              <div class="testimonial-client-details">
+                <div class="testimonial-client-title">Marek Kowalski</div>
+                <div class="testimonial-client-designation">Dyrektor marketingu</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slider-content-wrapper">
+            <p class="testimonial-slider-text">&quot;Jako freelancerka piszę teksty na zlecenie. Dzięki promptowaniu moja produktywność wzrosła dwukrotnie, a jakość treści jest lepsza niż kiedykolwiek.&quot;</p>
+            <div class="testimonial-client-info-wrapper"><img loading="lazy" src="images/Testimonial-Client-Image.svg" alt="" class="testimonial-client-image">
+              <div class="testimonial-client-details">
+                <div class="testimonial-client-title">Anna Nowak</div>
+                <div class="testimonial-client-designation">Copywriterka</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slider-content-wrapper">
+            <p class="testimonial-slider-text">&quot;Wdrożyliśmy AI w naszej firmie po szkoleniu. Automatyzacja obsługi klienta i raportowania zaoszczędziła nam tysiące złotych miesięcznie.&quot;</p>
+            <div class="testimonial-client-info-wrapper"><img loading="lazy" src="images/image.svg" alt="" class="testimonial-client-image">
+              <div class="testimonial-client-details">
+                <div class="testimonial-client-title">Tomasz Wiśniewski</div>
+                <div class="testimonial-client-designation">CEO, startup technologiczny</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slider-content-wrapper">
+            <p class="testimonial-slider-text">&quot;Nie jestem techniczna, a mimo to po kursie czuję się pewnie korzystając z ChatGPT i Claude. Polecam każdemu, kto chce nadążyć za zmianami.&quot;</p>
+            <div class="testimonial-client-info-wrapper"><img loading="lazy" src="images/Testimonial-Client-Image-2.svg" alt="" class="testimonial-client-image">
+              <div class="testimonial-client-details">
+                <div class="testimonial-client-title">Katarzyna Zielińska</div>
+                <div class="testimonial-client-designation">Nauczycielka, szkoła podstawowa</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="FAQ" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="faq-section scroll-fade">
+          <div class="faq-left">
+            <h2>Najczęściej<br>zadawane<br>pytania</h2>
+            <p>Nie znalazłeś odpowiedzi? Napisz do nas — chętnie pomożemy i rozwiejemy wszystkie wątpliwości.</p>
+          </div>
+          <div class="faq-right">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Dla kogo jest Szkoła Promptowania?</h4>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Dla każdego, kto chce efektywnie korzystać z AI w codziennej pracy — niezależnie od branży i poziomu technicznego. Nasze kursy sprawdzą się szczególnie dla:</p>
+                <ul>
+                  <li>Przedsiębiorców i freelancerów, którzy chcą automatyzować powtarzalne zadania</li>
+                  <li>Marketerów i copywriterów szukających sposobów na szybsze tworzenie treści</li>
+                  <li>Managerów i liderów zespołów wdrażających AI w firmie</li>
+                  <li>Nauczycieli i edukatorów, którzy chcą nadążyć za zmianami</li>
+                  <li>Każdego, kto chce oszczędzać czas i pracować mądrzej</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Czy muszę mieć wiedzę techniczną?</h4>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Absolutnie nie. Promptowanie to komunikacja z AI w naturalnym języku — po polsku. Nie piszesz kodu, nie konfigurujesz serwerów. Uczysz się formułować precyzyjne polecenia, które AI rozumie i na które odpowiada dokładnie tak, jak potrzebujesz. Jeśli potrafisz napisać maila, poradzisz sobie z promptowaniem.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Z jakich narzędzi AI będę korzystać?</h4>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Pracujemy z najlepszymi narzędziami dostępnymi na rynku:</p>
+                <ul>
+                  <li>ChatGPT (OpenAI) — do generowania tekstu, analizy i kreatywnej pracy</li>
+                  <li>Claude (Anthropic) — do złożonych analiz, długich dokumentów i kodowania</li>
+                  <li>Midjourney / DALL-E — do generowania grafik i wizualizacji</li>
+                  <li>Narzędzia do automatyzacji — Make, Zapier i inne integracje z AI</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Jak wyglądają kursy? Czy to nagrania czy zajęcia na żywo?</h4>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Pakiet Start i Pro to kursy online w formie nagrań video — uczysz się w swoim tempie, kiedy chcesz i gdzie chcesz. Każda lekcja to konkretna umiejętność z ćwiczeniem praktycznym. Pakiet Firma to warsztaty na żywo (online lub stacjonarnie), dopasowane do specyfiki Twojej organizacji.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Ile czasu zajmuje ukończenie kursu?</h4>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Pakiet Start (darmowy) to ok. 2-3 godziny materiału — możesz go przerobić w jedno popołudnie. Pakiet Pro to ok. 15-20 godzin, rozłożone na moduły. Większość kursantów kończy go w 2-3 tygodnie, poświęcając 30-60 minut dziennie. Ale nie ma presji — dostęp masz bezterminowo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Czy dostanę certyfikat?</h4>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Tak. Po ukończeniu każdego kursu otrzymujesz certyfikat Szkoły Promptowania potwierdzający Twoje umiejętności. Certyfikat możesz dodać do LinkedIn i CV. W pakiecie Firma przygotowujemy również raporty kompetencyjne dla zespołu.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Co jeśli kurs mi się nie spodoba?</h4>
+              <div class="faq-icon"></div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Dajemy 14-dniową gwarancję zwrotu pieniędzy bez pytań. Jeśli w ciągu 14 dni od zakupu stwierdzisz, że kurs nie jest dla Ciebie — oddajemy 100% kwoty. Zero ryzyka z Twojej strony.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Contact" class="section">
+      <div class="w-layout-blockcontainer container w-container">
+        <ul role="list" class="list">
+          <li>
+            <div class="banner-list-flex">
+              <div class="about-number-wrapper">
+                <p class="section-title-style scroll-fade">Napisz do nas</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div>
+          <div class="contact-form-block w-form scroll-fade">
+            <form id="contact-form" name="contact-form" data-name="Contact Form" method="get" class="form">
+              <div class="input-box-wrap"><label for="First-Name" class="field-label">Imię</label><input class="contact-input w-input" maxlength="256" name="First-Name" data-name="First Name" placeholder="Twoje imię" type="text" id="First-Name" required=""></div>
+              <div class="input-box-wrap"><label for="Last-Name" class="field-label">Nazwisko</label><input class="contact-input w-input" maxlength="256" name="Last-Name" data-name="Last Name" placeholder="Twoje nazwisko" type="text" id="Last-Name"></div>
+              <div class="input-box-wrap"><label for="Phone-Number" class="field-label">Telefon</label><input class="contact-input w-input" maxlength="256" name="Phone-Number" data-name="Phone Number" placeholder="Numer telefonu" type="tel" id="Phone-Number" required=""></div>
+              <div class="input-box-wrap"><label for="Email-Address" class="field-label">Email</label><input class="contact-input w-input" maxlength="256" name="Email" data-name="Email" placeholder="Adres email" type="email" id="Email-Address" required=""></div>
+              <div id="w-node-_072c5ecb-19ac-9429-6570-e4d169b84047-eb65a73a" class="input-box-wrap"><label for="Message" class="field-label">Wiadomość</label><textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="Twoja wiadomość..." required="" class="contact-input textarea w-input"></textarea></div>
+              <div class="contact-button-wrap"><input type="submit" data-wait="Wysyłanie..." class="contact-btn w-button" value="Wyślij wiadomość">
+                <a href="#Contact" class="primary-btn-wrap navber w-inline-block">
+                  <div class="text-wrap">
+                    <div style="-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="button-text">Wyślij wiadomość</div>
+                    <div style="-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="button-text">Wyślij wiadomość</div>
+                  </div>
+                  <div class="icon-wrapper"><img style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" loading="lazy" alt="" src="images/arrow-right.svg" class="arrow-01"><img style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" loading="lazy" alt="" src="images/arrow-right.svg" class="arrow-01"></div>
+                </a>
+              </div>
+            </form>
+            <div class="success-message w-form-done">
+              <div>Dziękujemy! Twoja wiadomość została wysłana.</div>
+            </div>
+            <div class="error-message w-form-fail">
+              <div>Ups! Coś poszło nie tak. Spróbuj ponownie.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="footer">
+      <div class="w-layout-blockcontainer container w-container">
+        <ul role="list" class="list">
+          <li>
+            <p class="section-title-style">Stopka</p>
+          </li>
+        </ul>
+      </div>
+      <section class="footer-inner-wrap">
+        <div class="footer-watermark">szkoła promptowania</div>
+        <div class="w-layout-blockcontainer container v1 w-container">
+          <div data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd82ff5" class="footer-form-wrap">
+            <div class="footer-items-wrap">
+              <ul data-w-id="a0a5394d-b706-6cf2-1f02-9e93c1ac2496" role="list" class="footer-list v2">
+                <li class="footer-list-item">
+                  <a href="#Home" class="footer-link">Start</a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#about" class="footer-link">O nas</a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#Service" class="footer-link">Kursy</a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#Pricing" class="footer-link">Cennik</a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#Contact" class="footer-link">Kontakt</a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#Blog" class="footer-link">Blog</a>
+                </li>
+              </ul>
+              <ul data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd83003" role="list" class="footer-list left v1">
+                <li class="footer-list-item">
+                  <a href="#" class="social-link-block w-inline-block"><img src="images/Social-Icons.svg" loading="lazy" alt="X / Twitter" class="social-image"></a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#" class="social-link-block w-inline-block"><img src="images/fi_20837.svg" loading="lazy" alt="Facebook" class="social-image"></a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#" class="social-link-block w-inline-block"><img src="images/Social-Icons-1.svg" loading="lazy" alt="Instagram" class="social-image"></a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#" class="social-link-block w-inline-block"><img src="images/fi_2111532.svg" loading="lazy" alt="LinkedIn" class="social-image"></a>
+                </li>
+              </ul>
+              <ul data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd82fe8" role="list" class="footer-list v1">
+                <li class="footer-list-item">
+                  <a href="#" class="footer-link">Regulamin</a>
+                </li>
+                <li class="footer-list-item">
+                  <a href="#" class="footer-link">Polityka prywatności</a>
+                </li>
+              </ul>
+            </div>
+            <div class="form-block v1 w-form">
+              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="footer-block"><label for="Subscribe-Email" class="footer-block-title">Newsletter</label>
+                <div class="footer-input-wrap"><input class="footer-input-box w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Twój email" type="email" id="Subscribe-Email" required=""><input type="submit" data-wait="Wysyłanie..." class="footer-form-btn w-button" value="Zapisz się"></div>
+              </form>
+              <div class="success-message w-form-done">
+                <div>Dziękujemy! Zostałeś zapisany do newslettera.</div>
+              </div>
+              <div class="error-message w-form-fail">
+                <div>Ups! Coś poszło nie tak. Spróbuj ponownie.</div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom-wrap">
+            <p data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd83024" class="footer-copy-write-text">© 2026 Szkoła Promptowania. Wszelkie prawa zastrzeżone.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=698de4b991fcd3d8eb65a6e5" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script>
+    // Webflow-style scroll animations via Intersection Observer
+    (function() {
+      var targets = document.querySelectorAll('.scroll-fade, .scroll-fade-stagger');
+      if (!targets.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      targets.forEach(function(el) { observer.observe(el); });
+    })();
+
+    // FAQ Accordion
+    (function() {
+      var questions = document.querySelectorAll('.faq-question');
+      questions.forEach(function(q) {
+        q.addEventListener('click', function() {
+          var item = this.closest('.faq-item');
+          var wasOpen = item.classList.contains('is-open');
+          // Close all
+          document.querySelectorAll('.faq-item.is-open').forEach(function(el) {
+            el.classList.remove('is-open');
+          });
+          // Toggle clicked
+          if (!wasOpen) {
+            item.classList.add('is-open');
+          }
+        });
+      });
+    })();
+
+    // Blog Carousel
+    (function() {
+      var track = document.querySelector('.blog-carousel-track');
+      var prevBtn = document.querySelector('.blog-side-nav.prev');
+      var nextBtn = document.querySelector('.blog-side-nav.next');
+      if (!track || !prevBtn || !nextBtn) return;
+      var slides = track.querySelectorAll('.blog-slide');
+      var current = 0;
+      function getVisible() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 991) return 2;
+        return 3;
+      }
+      function getMax() {
+        return Math.max(0, slides.length - getVisible());
+      }
+      function update() {
+        var visible = getVisible();
+        var gap = 24;
+        var slideW = (track.parentElement.offsetWidth - gap * (visible - 1)) / visible;
+        var offset = current * (slideW + gap);
+        track.style.transform = 'translateX(-' + offset + 'px)';
+        prevBtn.classList.toggle('disabled', current <= 0);
+        nextBtn.classList.toggle('disabled', current >= getMax());
+      }
+      prevBtn.addEventListener('click', function() {
+        if (current > 0) { current--; update(); }
+      });
+      nextBtn.addEventListener('click', function() {
+        if (current < getMax()) { current++; update(); }
+      });
+      window.addEventListener('resize', function() {
+        if (current > getMax()) current = getMax();
+        update();
+      });
+      update();
+    })();
+
+    // Service Accordion
+    (function() {
+      var serviceItems = document.querySelectorAll('.service-accordion-item');
+      serviceItems.forEach(function(item) {
+        var header = item.querySelector('.service-item-wrap');
+        header.addEventListener('click', function(e) {
+          e.preventDefault();
+          var wasOpen = item.classList.contains('is-open');
+          // Close all service items
+          document.querySelectorAll('.service-accordion-item.is-open').forEach(function(el) {
+            el.classList.remove('is-open');
+          });
+          // Toggle clicked
+          if (!wasOpen) {
+            item.classList.add('is-open');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

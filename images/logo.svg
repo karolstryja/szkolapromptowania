@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 56" fill="none">
+  <rect x="1" y="1" width="398" height="54" rx="27"
+        stroke="#09080e" stroke-width="2"/>
+
+  <text y="35.5" font-family="'CreatoDisplay', sans-serif" font-size="22"
+        fill="#09080e" letter-spacing="-0.4">
+    <tspan x="24" font-weight="400">szkoła</tspan><tspan font-weight="700">promptowania</tspan><tspan font-weight="400">.com</tspan>
+  </text>
+
+  <circle cx="370" cy="28" r="20" fill="#09080e"/>
+  <path d="M370 36 V20 M370 20 L364 26 M370 20 L376 26"
+        stroke="white" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
