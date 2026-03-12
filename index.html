@@ -28,6 +28,11 @@
     .navbar-brand.w--current {
       align-self: center !important;
     }
+    .navber-menu-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
     /* CTA button — filled amber, cohesive with logo */
     .primary-btn-wrap {
       background-color: var(--primary) !important;
@@ -96,8 +101,10 @@
     }
     .logo-marquee-track .logo {
       flex: none;
-      max-width: 140px;
-      max-height: 32px;
+      width: auto;
+      height: 28px;
+      max-width: none;
+      max-height: none;
       opacity: 0.7;
       transition: opacity 0.3s ease;
     }
@@ -107,6 +114,32 @@
     @keyframes marquee {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+    /* Hero glow */
+    .section.bnner .w-container > div:first-child {
+      position: relative;
+    }
+    .section.bnner .w-container > div:first-child::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 70%;
+      background: radial-gradient(ellipse at center, rgba(255, 189, 89, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
+    }
+    .section.bnner .animation-wrap {
+      position: relative;
+      z-index: 1;
+    }
+    [data-theme="dark"] .section.bnner .w-container > div:first-child::after {
+      background: radial-gradient(ellipse at center, rgba(255, 189, 89, 0.18) 0%, transparent 70%);
+      filter: blur(80px);
     }
 
     /* Hero slide-up animation (Webflow IX2 style) */
