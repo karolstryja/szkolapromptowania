@@ -49,31 +49,34 @@
       padding: 0 24px;
     }
 
-    /* ── Back link ── */
+    /* ── Top bar: back + tags ── */
+    .blog-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-family: var(--font-family);
+      font-size: 14px;
+    }
     .blog-back-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-family: var(--font-family);
+      gap: 6px;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--gray-color);
       text-decoration: none;
-      margin-bottom: 32px;
       transition: color 0.2s;
+      white-space: nowrap;
     }
     .blog-back-link:hover { color: var(--primary); }
-
-    /* ── Meta ── */
-    .blog-meta {
+    .blog-meta-tags {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 16px;
-      font-family: var(--font-family);
-      font-size: 14px;
-      color: var(--gray-color);
+      justify-content: flex-end;
     }
     .blog-meta-tag {
       background: rgba(255,189,89,0.15);
@@ -88,7 +91,7 @@
     .blog-article-title {
       font-family: var(--font-family);
       font-size: 46px;
-      font-weight: 700;
+      font-weight: 400;
       line-height: 1.1;
       letter-spacing: -2px;
       color: var(--text-primary);
@@ -539,8 +542,10 @@
     <!-- Article — narrow container -->
     <section class="section" style="padding-top: 48px;">
       <div class="blog-article">
-        <a href="index.html#Blog" class="blog-back-link">← wróć do strony głównej</a>
-        <div id="blog-meta" class="blog-meta"></div>
+        <div class="blog-top-bar">
+          <a href="index.html#Blog" class="blog-back-link">← powrót</a>
+          <div id="blog-meta-tags" class="blog-meta-tags"></div>
+        </div>
         <h1 id="blog-title" class="blog-article-title"></h1>
         <div id="blog-content" class="blog-article-body"></div>
       </div>
@@ -599,19 +604,15 @@
             }
           }
 
-          // Meta
-          var metaHtml = '';
-          if (frontmatter.date) {
-            var d = new Date(frontmatter.date);
-            metaHtml += '<span>' + d.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' }) + '</span>';
-          }
+          // Tags (no date)
+          var tagsHtml = '';
           if (frontmatter.tags) {
             var tags = frontmatter.tags.replace(/[\[\]]/g, '').split(',');
             tags.forEach(function(t) {
-              metaHtml += '<span class="blog-meta-tag">' + t.trim() + '</span>';
+              tagsHtml += '<span class="blog-meta-tag">' + t.trim() + '</span>';
             });
           }
-          document.getElementById('blog-meta').innerHTML = metaHtml;
+          document.getElementById('blog-meta-tags').innerHTML = tagsHtml;
 
           // :::video
           md = md.replace(/:::video\n([\s\S]*?):::/g, function(match, content) {
