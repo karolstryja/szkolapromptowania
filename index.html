@@ -720,7 +720,44 @@
       color: var(--text-primary);
     }
 
-    /* Contact form section */
+    /* Contact form section — two-column layout */
+    .contact-section-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 60px;
+    }
+    .contact-left-text {
+      flex: 1;
+      padding-top: 20px;
+    }
+    .contact-left-text p {
+      font-family: var(--font-family);
+      font-size: 28px;
+      font-weight: var(--medium);
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin: 0;
+      opacity: 0.55;
+    }
+    .contact-left-text .contact-left-cta {
+      font-size: 48px;
+      font-weight: var(--bold);
+      margin-top: 24px;
+      opacity: 1;
+      color: var(--primary);
+    }
+    @media (max-width: 768px) {
+      .contact-section-layout {
+        flex-direction: column;
+        gap: 32px;
+      }
+      .contact-left-text p {
+        font-size: 22px;
+      }
+      .contact-left-text .contact-left-cta {
+        font-size: 36px;
+      }
+    }
     [data-theme="dark"] .contact-input.textarea {
       background-color: var(--bg-surface-alt);
       border-color: var(--border-color);
@@ -1396,7 +1433,11 @@
             </div>
           </li>
         </ul>
-        <div>
+        <div class="contact-section-layout">
+          <div class="contact-left-text scroll-fade">
+            <p>Planujesz szkolenie?<br>Event?<br>Nie wiesz jak zacząć wdrożenie?<br>Pracownicy korzystają z czatbotów w telefonach?</p>
+            <p class="contact-left-cta">Pomożemy.</p>
+          </div>
           <div class="contact-form-block w-form scroll-fade">
             <form id="contact-form" name="contact-form" data-name="Contact Form" method="get" class="form">
               <div class="input-box-wrap"><input class="contact-input w-input" maxlength="256" name="First-Name" data-name="First Name" placeholder="imię" type="text" id="First-Name" required=""></div>
