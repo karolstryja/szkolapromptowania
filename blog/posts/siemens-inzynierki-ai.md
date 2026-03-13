@@ -27,7 +27,7 @@ Tak brzmiał nasz główny przekaz. Nie uczyliśmy programowania. Nie uczyliśmy
 
 Na żywo wrzuciliśmy raport Siemensa do chatbota. W kilka sekund — sformatowane podsumowanie z kluczowymi wnioskami. Dla osób, które na co dzień przerabiają dziesiątki stron dokumentacji technicznej, to był moment "aha".
 
-:::gallery-slider
+:::gallery-masonry
 images/blog/siemens/workshop-1.jpg | Warsztaty z prompt engineeringu
 images/blog/siemens/workshop-2.jpg | 30 studentek politechnik w akcji
 images/blog/siemens/workshop-3.jpg | Praca z AI w praktyce
