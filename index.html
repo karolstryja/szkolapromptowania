@@ -92,6 +92,48 @@
       }
     }
 
+    /* Footer row layout — newsletter inline with menu */
+    .footer-row-layout {
+      flex-direction: column !important;
+      gap: 40px;
+    }
+    .footer-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: 100%;
+    }
+    .footer-top-row .footer-list.v2 {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .footer-newsletter-inline {
+      flex-shrink: 0;
+      width: 340px;
+      margin-bottom: 0;
+    }
+    .footer-newsletter-form {
+      margin: 0;
+    }
+    .footer-newsletter-form .footer-input-wrap {
+      height: 42px;
+    }
+    .footer-newsletter-form .footer-form-btn {
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .footer-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+      .footer-newsletter-inline {
+        width: 100%;
+      }
+    }
+
     /* Logo marquee — infinite scroll */
     .logo-marquee {
       overflow: hidden;
@@ -1393,62 +1435,37 @@
       <section class="footer-inner-wrap">
         <div class="footer-watermark">szkoła promptowania</div>
         <div class="w-layout-blockcontainer container v1 w-container">
-          <div data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd82ff5" class="footer-form-wrap">
-            <div class="footer-items-wrap">
-              <ul data-w-id="a0a5394d-b706-6cf2-1f02-9e93c1ac2496" role="list" class="footer-list v2">
-                <li class="footer-list-item">
-                  <a href="#Home" class="footer-link">start</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#about" class="footer-link">o nas</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#Service" class="footer-link">kursy</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#Pricing" class="footer-link">cennik</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#Contact" class="footer-link">kontakt</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#Blog" class="footer-link">blog</a>
-                </li>
+          <div class="footer-form-wrap footer-row-layout">
+            <!-- Row 1: menu links + newsletter inline -->
+            <div class="footer-top-row">
+              <ul role="list" class="footer-list v2">
+                <li class="footer-list-item"><a href="#Home" class="footer-link">start</a></li>
+                <li class="footer-list-item"><a href="#about" class="footer-link">o nas</a></li>
+                <li class="footer-list-item"><a href="#Service" class="footer-link">kursy</a></li>
+                <li class="footer-list-item"><a href="#Pricing" class="footer-link">cennik</a></li>
+                <li class="footer-list-item"><a href="#Contact" class="footer-link">kontakt</a></li>
+                <li class="footer-list-item"><a href="#Blog" class="footer-link">blog</a></li>
               </ul>
-              <ul data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd83003" role="list" class="footer-list left v1">
-                <li class="footer-list-item">
-                  <a href="#" class="social-link-block w-inline-block"><img src="images/Social-Icons.svg" loading="lazy" alt="X / Twitter" class="social-image"></a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#" class="social-link-block w-inline-block"><img src="images/fi_20837.svg" loading="lazy" alt="Facebook" class="social-image"></a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#" class="social-link-block w-inline-block"><img src="images/Social-Icons-1.svg" loading="lazy" alt="Instagram" class="social-image"></a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#" class="social-link-block w-inline-block"><img src="images/fi_2111532.svg" loading="lazy" alt="LinkedIn" class="social-image"></a>
-                </li>
-              </ul>
-              <ul data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd82fe8" role="list" class="footer-list v1">
-                <li class="footer-list-item">
-                  <a href="#" class="footer-link">regulamin</a>
-                </li>
-                <li class="footer-list-item">
-                  <a href="#" class="footer-link">polityka prywatności</a>
-                </li>
-              </ul>
-            </div>
-            <div class="form-block v1 w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="footer-block"><label for="Subscribe-Email" class="footer-block-title">Newsletter</label>
-                <div class="footer-input-wrap"><input class="footer-input-box w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="twój email" type="email" id="Subscribe-Email" required=""><input type="submit" data-wait="Wysyłanie..." class="footer-form-btn w-button" value="zapisz się"></div>
-              </form>
-              <div class="success-message w-form-done">
-                <div>Dziękujemy! Zostałeś zapisany do newslettera.</div>
-              </div>
-              <div class="error-message w-form-fail">
-                <div>Ups! Coś poszło nie tak. Spróbuj ponownie.</div>
+              <div class="footer-newsletter-inline w-form">
+                <form id="email-form" name="email-form" data-name="Email Form" method="get" class="footer-newsletter-form">
+                  <div class="footer-input-wrap"><input class="footer-input-box w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="twój email" type="email" id="Subscribe-Email" required=""><input type="submit" data-wait="Wysyłanie..." class="footer-form-btn w-button" value="zapisz się"></div>
+                </form>
+                <div class="success-message w-form-done"><div>Zapisano!</div></div>
+                <div class="error-message w-form-fail"><div>Błąd. Spróbuj ponownie.</div></div>
               </div>
             </div>
+            <!-- Row 2: social icons -->
+            <ul role="list" class="footer-list left v1">
+              <li class="footer-list-item"><a href="#" class="social-link-block w-inline-block"><img src="images/Social-Icons.svg" loading="lazy" alt="X / Twitter" class="social-image"></a></li>
+              <li class="footer-list-item"><a href="#" class="social-link-block w-inline-block"><img src="images/fi_20837.svg" loading="lazy" alt="Facebook" class="social-image"></a></li>
+              <li class="footer-list-item"><a href="#" class="social-link-block w-inline-block"><img src="images/Social-Icons-1.svg" loading="lazy" alt="Instagram" class="social-image"></a></li>
+              <li class="footer-list-item"><a href="#" class="social-link-block w-inline-block"><img src="images/fi_2111532.svg" loading="lazy" alt="LinkedIn" class="social-image"></a></li>
+            </ul>
+            <!-- Row 3: legal -->
+            <ul role="list" class="footer-list v1">
+              <li class="footer-list-item"><a href="#" class="footer-link">regulamin</a></li>
+              <li class="footer-list-item"><a href="#" class="footer-link">polityka prywatności</a></li>
+            </ul>
           </div>
           <div class="footer-bottom-wrap">
             <p data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd83024" class="footer-copy-write-text">© 2026 Szkoła Promptowania. Wszelkie prawa zastrzeżone.</p>
