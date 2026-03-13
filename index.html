@@ -413,13 +413,20 @@
     .contact-input.textarea {
       border-radius: 16px !important;
     }
+    .contact-input::placeholder {
+      color: #aaa !important;
+      opacity: 1;
+    }
+    [data-theme="dark"] .contact-input::placeholder {
+      color: #7a7268 !important;
+    }
 
     /* Blog Carousel */
     .blog-header {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 0;
+      margin-bottom: 32px;
     }
     .blog-header .blog-list {
       margin: 0;
@@ -712,27 +719,27 @@
               <div class="navber-wrapper">
                 <ul role="list" class="nav-menu w-list-unstyled">
                   <li>
-                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e44392" href="#Home" class="nav-link">Start</a>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e44392" href="#Home" class="nav-link">start</a>
                     <div class="line"></div>
                   </li>
                   <li>
-                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e44396" href="#about" class="nav-link">O nas</a>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e44396" href="#about" class="nav-link">o nas</a>
                     <div class="line"></div>
                   </li>
                   <li>
-                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e4439a" href="#Service" class="nav-link">Kursy</a>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e4439a" href="#Service" class="nav-link">kursy</a>
                     <div class="line"></div>
                   </li>
                   <li>
-                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e4439f" href="#Project" class="nav-link">Efekty</a>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e4439f" href="#Project" class="nav-link">efekty</a>
                     <div class="line"></div>
                   </li>
                   <li>
-                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e443a7" href="#Pricing" class="nav-link">Cennik</a>
+                    <a data-w-id="4ee1c7c7-ccc0-8ece-ce20-e04073e443a7" href="#Pricing" class="nav-link">cennik</a>
                     <div class="line"></div>
                   </li>
                   <li>
-                    <a data-w-id="67e2b60c-adbb-1b0a-5d0e-9a3b41ddc1e8" href="#Blog" class="nav-link">Blog</a>
+                    <a data-w-id="67e2b60c-adbb-1b0a-5d0e-9a3b41ddc1e8" href="#Blog" class="nav-link">blog</a>
                     <div class="line"></div>
                   </li>
                 </ul>
@@ -816,8 +823,8 @@
                 <p class="section-title-style scroll-fade">Czego się nauczysz</p>
                 <a href="#Pricing" data-w-id="511328fb-ea67-5517-1696-c8fe20b9361a" class="primary-btn-wrap navber w-inline-block">
                   <div class="text-wrap">
-                    <div class="button-text">Zobacz kursy</div>
-                    <div class="button-text">Zobacz kursy</div>
+                    <div class="button-text">zobacz kursy</div>
+                    <div class="button-text">zobacz kursy</div>
                   </div>
                   <div class="icon-wrapper"><img loading="lazy" src="images/arrow-right.svg" alt="" class="arrow-01"><img loading="lazy" src="images/arrow-right.svg" alt="" class="arrow-01"></div>
                 </a>
@@ -1184,7 +1191,7 @@
           <li>
             <div class="banner-list-flex">
               <div class="about-number-wrapper">
-                <p class="section-title-style scroll-fade">Co mówią kursanci</p>
+                <p class="section-title-style scroll-fade">Co mówią kursanci?</p>
               </div>
             </div>
           </li>
@@ -1345,16 +1352,16 @@
         <div>
           <div class="contact-form-block w-form scroll-fade">
             <form id="contact-form" name="contact-form" data-name="Contact Form" method="get" class="form">
-              <div class="input-box-wrap"><label for="First-Name" class="field-label">Imię</label><input class="contact-input w-input" maxlength="256" name="First-Name" data-name="First Name" placeholder="Twoje imię" type="text" id="First-Name" required=""></div>
-              <div class="input-box-wrap"><label for="Last-Name" class="field-label">Nazwisko</label><input class="contact-input w-input" maxlength="256" name="Last-Name" data-name="Last Name" placeholder="Twoje nazwisko" type="text" id="Last-Name"></div>
-              <div class="input-box-wrap"><label for="Phone-Number" class="field-label">Telefon</label><input class="contact-input w-input" maxlength="256" name="Phone-Number" data-name="Phone Number" placeholder="Numer telefonu" type="tel" id="Phone-Number" required=""></div>
-              <div class="input-box-wrap"><label for="Email-Address" class="field-label">Email</label><input class="contact-input w-input" maxlength="256" name="Email" data-name="Email" placeholder="Adres email" type="email" id="Email-Address" required=""></div>
-              <div id="w-node-_072c5ecb-19ac-9429-6570-e4d169b84047-eb65a73a" class="input-box-wrap"><label for="Message" class="field-label">Wiadomość</label><textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="Twoja wiadomość..." required="" class="contact-input textarea w-input"></textarea></div>
-              <div class="contact-button-wrap"><input type="submit" data-wait="Wysyłanie..." class="contact-btn w-button" value="Wyślij wiadomość">
+              <div class="input-box-wrap"><input class="contact-input w-input" maxlength="256" name="First-Name" data-name="First Name" placeholder="imię" type="text" id="First-Name" required=""></div>
+              <div class="input-box-wrap"><input class="contact-input w-input" maxlength="256" name="Last-Name" data-name="Last Name" placeholder="nazwisko" type="text" id="Last-Name"></div>
+              <div class="input-box-wrap"><input class="contact-input w-input" maxlength="256" name="Phone-Number" data-name="Phone Number" placeholder="telefon" type="tel" id="Phone-Number" required=""></div>
+              <div class="input-box-wrap"><input class="contact-input w-input" maxlength="256" name="Email" data-name="Email" placeholder="email" type="email" id="Email-Address" required=""></div>
+              <div id="w-node-_072c5ecb-19ac-9429-6570-e4d169b84047-eb65a73a" class="input-box-wrap"><textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="wiadomość..." required="" class="contact-input textarea w-input"></textarea></div>
+              <div class="contact-button-wrap"><input type="submit" data-wait="Wysyłanie..." class="contact-btn w-button" value="wyślij wiadomość">
                 <a href="#Contact" class="primary-btn-wrap navber w-inline-block">
                   <div class="text-wrap">
-                    <div style="-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="button-text">Wyślij wiadomość</div>
-                    <div style="-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="button-text">Wyślij wiadomość</div>
+                    <div style="-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="button-text">wyślij wiadomość</div>
+                    <div style="-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="button-text">wyślij wiadomość</div>
                   </div>
                   <div class="icon-wrapper"><img style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" loading="lazy" alt="" src="images/arrow-right.svg" class="arrow-01"><img style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" loading="lazy" alt="" src="images/arrow-right.svg" class="arrow-01"></div>
                 </a>
@@ -1385,22 +1392,22 @@
             <div class="footer-items-wrap">
               <ul data-w-id="a0a5394d-b706-6cf2-1f02-9e93c1ac2496" role="list" class="footer-list v2">
                 <li class="footer-list-item">
-                  <a href="#Home" class="footer-link">Start</a>
+                  <a href="#Home" class="footer-link">start</a>
                 </li>
                 <li class="footer-list-item">
-                  <a href="#about" class="footer-link">O nas</a>
+                  <a href="#about" class="footer-link">o nas</a>
                 </li>
                 <li class="footer-list-item">
-                  <a href="#Service" class="footer-link">Kursy</a>
+                  <a href="#Service" class="footer-link">kursy</a>
                 </li>
                 <li class="footer-list-item">
-                  <a href="#Pricing" class="footer-link">Cennik</a>
+                  <a href="#Pricing" class="footer-link">cennik</a>
                 </li>
                 <li class="footer-list-item">
-                  <a href="#Contact" class="footer-link">Kontakt</a>
+                  <a href="#Contact" class="footer-link">kontakt</a>
                 </li>
                 <li class="footer-list-item">
-                  <a href="#Blog" class="footer-link">Blog</a>
+                  <a href="#Blog" class="footer-link">blog</a>
                 </li>
               </ul>
               <ul data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd83003" role="list" class="footer-list left v1">
@@ -1419,16 +1426,16 @@
               </ul>
               <ul data-w-id="9554a9ea-07d8-1f6f-0ff4-97a77fd82fe8" role="list" class="footer-list v1">
                 <li class="footer-list-item">
-                  <a href="#" class="footer-link">Regulamin</a>
+                  <a href="#" class="footer-link">regulamin</a>
                 </li>
                 <li class="footer-list-item">
-                  <a href="#" class="footer-link">Polityka prywatności</a>
+                  <a href="#" class="footer-link">polityka prywatności</a>
                 </li>
               </ul>
             </div>
             <div class="form-block v1 w-form">
               <form id="email-form" name="email-form" data-name="Email Form" method="get" class="footer-block"><label for="Subscribe-Email" class="footer-block-title">Newsletter</label>
-                <div class="footer-input-wrap"><input class="footer-input-box w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Twój email" type="email" id="Subscribe-Email" required=""><input type="submit" data-wait="Wysyłanie..." class="footer-form-btn w-button" value="Zapisz się"></div>
+                <div class="footer-input-wrap"><input class="footer-input-box w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="twój email" type="email" id="Subscribe-Email" required=""><input type="submit" data-wait="Wysyłanie..." class="footer-form-btn w-button" value="zapisz się"></div>
               </form>
               <div class="success-message w-form-done">
                 <div>Dziękujemy! Zostałeś zapisany do newslettera.</div>
