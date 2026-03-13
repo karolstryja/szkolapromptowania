@@ -16,6 +16,14 @@
     "tags": ["case study", "lenovo", "AI day", "warsztaty", "edukacja"]
   },
   {
+    "slug": "meta-marketing-summit",
+    "title": "Meta Marketing Summit — Równanie Warszawskie",
+    "date": "2024-09-17",
+    "image": "images/blog/meta/hero.jpg",
+    "excerpt": "Jak połączyć akademię, data science i kreatywność w 30 minut na szczycie Meta? Równanie, które rozwiązaliśmy w Warszawie.",
+    "tags": ["case study", "meta", "marketing summit", "panel", "AI"]
+  },
+  {
     "slug": "siemens-inzynierki-ai",
     "title": "Siemens Inżynierki 4.0 — AI Edition",
     "date": "2025-10-15",
