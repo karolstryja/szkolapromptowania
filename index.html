@@ -480,8 +480,11 @@
       flex: 1;
     }
     .blog-carousel {
-      overflow: hidden;
+      overflow: visible;
       position: relative;
+    }
+    .blog-carousel-track-wrap {
+      overflow: hidden;
     }
     .blog-carousel-track {
       display: flex;
@@ -1179,6 +1182,7 @@
         </div>
         <div class="blog-carousel scroll-fade">
           <button class="blog-side-nav prev disabled" aria-label="Poprzedni">&#8249;</button>
+          <div class="blog-carousel-track-wrap">
           <div class="blog-carousel-track">
             <div class="blog-slide">
               <a href="blog.html?post=siemens-inzynierki-ai" class="blog-link-block w-inline-block">
@@ -1325,6 +1329,7 @@
                 </div>
               </a>
             </div>
+          </div>
           </div>
           <button class="blog-side-nav next disabled" aria-label="Następny">&#8250;</button>
         </div>
