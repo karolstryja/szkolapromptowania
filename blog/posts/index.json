@@ -1,5 +1,13 @@
 [
   {
+    "slug": "siemens-inzynierki-ai",
+    "title": "Siemens Inżynierki 4.0 — AI Edition",
+    "date": "2025-10-15",
+    "image": "images/blog/siemens/hero.jpg",
+    "excerpt": "30 studentek politechnik, dwa dni warsztatów i jedno pytanie — jak nauczyć przyszłe inżynierki języka, którym mówi się do maszyn?",
+    "tags": ["case study", "siemens", "warsztaty", "prompt engineering"]
+  },
+  {
     "slug": "jak-napisac-pierwszy-prompt",
     "title": "Jak napisać pierwszy prompt",
     "date": "2026-03-10",
