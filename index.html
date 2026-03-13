@@ -21,8 +21,9 @@
     /* Section snap on scroll */
     html {
       scroll-snap-type: y proximity;
+      scroll-behavior: smooth;
     }
-    .section, .blog-scroll-section {
+    .section {
       scroll-snap-align: start;
     }
 
@@ -498,6 +499,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    .blog-carousel {
       overflow: hidden;
     }
     .blog-carousel-track {
@@ -1606,8 +1609,9 @@
     // Blog scroll-driven horizontal slide
     (function() {
       var section = document.querySelector('.blog-scroll-section');
+      var carousel = document.querySelector('.blog-carousel');
       var track = document.querySelector('.blog-carousel-track');
-      if (!section || !track) return;
+      if (!section || !carousel || !track) return;
       var slides = track.querySelectorAll('.blog-slide');
 
       function getVisible() {
@@ -1624,9 +1628,8 @@
           track.style.transform = 'none';
           return;
         }
-        // Extra scroll height: each overflow card = 60vh of scroll distance
-        var extraH = overflow * 60;
-        section.style.height = (100 + extraH) + 'vh';
+        // Extra scroll height: each overflow card adds 50vh
+        section.style.height = (100 + overflow * 50) + 'vh';
       }
 
       function onScroll() {
@@ -1637,14 +1640,13 @@
         var overflow = slides.length - visible;
         if (overflow <= 0) { track.style.transform = 'none'; return; }
 
-        // Progress: 0 at top of section, 1 when sticky ends
         var scrolled = -rect.top;
         var scrollRange = sectionH - viewH;
+        if (scrollRange <= 0) return;
         var progress = Math.max(0, Math.min(1, scrolled / scrollRange));
 
-        // Max translateX = total overflow width
         var gap = 24;
-        var containerW = track.parentElement.offsetWidth;
+        var containerW = carousel.offsetWidth;
         var slideW = (containerW - gap * (visible - 1)) / visible;
         var maxShift = overflow * (slideW + gap);
 
