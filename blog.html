@@ -271,23 +271,69 @@
       display: none;
     }
 
-    /* Masonry — Pinterest-style nierówne kolumny */
+    /* Masonry / Bento — editorial asymmetric grid
+       1. zdjęcie: duże (2 kolumny lub 2 rzędy)
+       reszta: wypełnia siatkę */
     .gallery-masonry {
-      columns: 3;
-      column-gap: 6px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-auto-rows: 280px;
+      gap: 4px;
     }
     .gallery-masonry figure {
-      margin: 0 0 6px 0;
-      break-inside: avoid;
+      margin: 0;
+      overflow: hidden;
+    }
+    .gallery-masonry figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Pierwsze zdjęcie — duże, 2 rzędy */
+    .gallery-masonry figure:nth-child(1) {
+      grid-row: span 2;
+    }
+    /* Przy 4 zdjęciach: 2x2 */
+    .gallery-masonry[data-count="4"] {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 300px;
+    }
+    .gallery-masonry[data-count="4"] figure:nth-child(1) {
+      grid-row: span 1;
+    }
+    /* Przy 3 zdjęciach: 1 duże + 2 obok */
+    .gallery-masonry[data-count="3"] {
+      grid-template-columns: 1.5fr 1fr;
+      grid-auto-rows: 220px;
+    }
+    .gallery-masonry[data-count="3"] figure:nth-child(1) {
+      grid-row: span 2;
+    }
+    /* Przy 2 zdjęciach: pół na pół */
+    .gallery-masonry[data-count="2"] {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 360px;
+    }
+    .gallery-masonry[data-count="2"] figure:nth-child(1) {
+      grid-row: span 1;
+    }
+    /* Przy 6+ — ostatnie zdjęcie na 2 kolumny jeśli nieparzyste */
+    .gallery-masonry figure:last-child:nth-child(even):not(:nth-child(2)) {
+      grid-column: span 2;
     }
 
     /* Grid — równe kafelki */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 6px;
+      gap: 4px;
     }
-    .gallery-grid figure { margin: 0; }
+    .gallery-grid figure { margin: 0; overflow: hidden; }
+    .gallery-grid figure img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
 
     /* Fullwidth — viewport edge-to-edge */
     .gallery-fullwidth {
@@ -424,7 +470,8 @@
         width: calc(100% + 120px);
         margin-left: -60px;
       }
-      .gallery-masonry { columns: 2; }
+      .gallery-masonry { grid-template-columns: 1fr 1fr !important; grid-auto-rows: 240px !important; }
+      .gallery-masonry figure:nth-child(1) { grid-row: span 2; }
     }
 
     @media (max-width: 768px) {
@@ -467,7 +514,11 @@
         width: calc(100% + 36px);
         margin-left: -18px;
       }
-      .gallery-masonry { columns: 1; }
+      .gallery-masonry {
+        grid-template-columns: 1fr 1fr !important;
+        grid-auto-rows: 180px !important;
+      }
+      .gallery-masonry figure:nth-child(1) { grid-row: span 1; }
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-slider figure { width: 80%; }
 
@@ -609,14 +660,15 @@
 
           // :::gallery-TYPE
           md = md.replace(/:::gallery-(masonry|grid|fullwidth|slider)\n([\s\S]*?):::/g, function(match, layout, content) {
-            var figures = content.trim().split('\n').map(function(line) {
+            var lines = content.trim().split('\n');
+            var count = lines.length;
+            var figures = lines.map(function(line) {
               var pts = line.split('|');
               var src = pts[0].trim().replace(/^\//, '');
               var caption = pts[1] ? pts[1].trim() : '';
-              return '<figure><img src="' + src + '" alt="' + caption + '" loading="lazy">' +
-                     (caption ? '<figcaption>' + caption + '</figcaption>' : '') + '</figure>';
+              return '<figure><img src="' + src + '" alt="' + caption + '" loading="lazy"></figure>';
             }).join('\n');
-            return '<div class="blog-gallery gallery-' + layout + '">' + figures + '</div>';
+            return '<div class="blog-gallery gallery-' + layout + '" data-count="' + count + '">' + figures + '</div>';
           });
 
           document.getElementById('blog-content').innerHTML = marked.parse(md);
