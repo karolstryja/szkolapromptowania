@@ -103,32 +103,29 @@
       color: var(--text-primary);
     }
 
-    /* ── H2 — styl ze strony głównej: amber kropka + linia ── */
+    /* ── H2 — kropka + linia, większy niż tekst ── */
     .blog-article-body h2 {
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: 0;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
       color: var(--text-primary);
       margin: 56px 0 24px 0;
       padding: 10px 0 0 20px;
       border-top: 1px solid var(--border-color, #ececec);
-      border-bottom: none;
       position: relative;
-      list-style: none;
     }
     .blog-article-body h2::before {
       content: '●';
       color: var(--primary-tint, var(--primary));
       position: absolute;
       left: 0;
-      top: 10px;
+      top: 16px;
       font-size: 10px;
-      line-height: 18px;
     }
 
     .blog-article-body h3 {
-      font-size: 18px;
-      font-weight: 500;
+      font-size: 22px;
+      font-weight: 600;
       margin: 36px 0 14px 0;
       padding-left: 20px;
       color: var(--text-primary);
@@ -139,9 +136,8 @@
       color: var(--primary-tint, var(--primary));
       position: absolute;
       left: 0;
-      top: 0;
+      top: 7px;
       font-size: 8px;
-      line-height: 18px;
       opacity: 0.5;
     }
 
@@ -151,62 +147,36 @@
       opacity: 0.88;
     }
     .blog-article-body strong {
-      font-weight: 700;
+      font-weight: 600;
       opacity: 1;
-      color: var(--text-primary);
     }
 
-    /* ── Blockquote — amber accent block ── */
+    /* ── Blockquote — minimal, just italic + border ── */
     .blog-article-body blockquote {
-      margin: 40px -24px;
-      padding: 32px 36px 32px 40px;
-      background: rgba(255,189,89,0.07);
-      border-left: 4px solid var(--primary);
-      border-radius: 0 14px 14px 0;
-      font-size: 21px;
+      margin: 36px 0;
+      padding: 0 0 0 24px;
+      border-left: 2px solid var(--primary);
+      font-size: 19px;
       font-style: italic;
-      line-height: 1.55;
+      line-height: 1.7;
       color: var(--text-primary);
-      position: relative;
-    }
-    [data-theme="dark"] .blog-article-body blockquote {
-      background: rgba(255,189,89,0.04);
-    }
-    .blog-article-body blockquote::before {
-      content: '\201C';
-      position: absolute;
-      top: 10px;
-      left: 14px;
-      font-size: 56px;
-      font-family: Georgia, serif;
-      color: var(--primary);
-      opacity: 0.25;
-      line-height: 1;
+      opacity: 0.75;
     }
     .blog-article-body blockquote p {
       margin: 0;
-      opacity: 0.92;
     }
 
-    /* ── Lists — accent stripe ── */
+    /* ── Lists ── */
     .blog-article-body ul,
     .blog-article-body ol {
-      margin: 20px 0 28px 0;
-      padding: 18px 20px 18px 40px;
-      background: rgba(0,0,0,0.02);
-      border-left: 3px solid rgba(255,189,89,0.4);
-      border-radius: 0 12px 12px 0;
-    }
-    [data-theme="dark"] .blog-article-body ul,
-    [data-theme="dark"] .blog-article-body ol {
-      background: rgba(255,255,255,0.025);
+      margin: 16px 0 24px 0;
+      padding-left: 24px;
     }
     .blog-article-body li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       opacity: 0.88;
     }
     .blog-article-body li:last-child { margin-bottom: 0; }
-    .blog-article-body li strong { color: var(--primary); }
 
     /* ── Code ── */
     .blog-article-body code {
@@ -491,21 +461,11 @@
       .blog-article-body h2 { font-size: 24px; margin-top: 44px; }
       .blog-article-body h3 { font-size: 19px; }
 
-      .blog-article-body blockquote {
-        margin: 28px -18px;
-        padding: 24px 24px;
-        font-size: 18px;
-      }
-      .blog-article-body blockquote::before { font-size: 44px; top: 6px; left: 10px; }
-
+      .blog-article-body blockquote { font-size: 17px; }
       .blog-article-body pre {
         margin: 24px -18px;
         padding: 20px 18px;
         border-radius: 0;
-      }
-      .blog-article-body ul,
-      .blog-article-body ol {
-        padding: 14px 14px 14px 32px;
       }
 
       /* Galerie i video na pełną szerokość mobile */
